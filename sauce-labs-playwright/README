@@ -1,0 +1,109 @@
+# LEGO Education Code Challenge - Test Automation Framework
+
+This project automates critical workflows for the Sauce Labs Demo website using Playwright. The framework includes automated tests for login, cart management, and checkout functionalities.
+
+## Table of Contents
+1. Prerequisites
+2. Installation
+3. Running Tests Locally
+4. Running Specific Test Suites
+5. CI/CD Integration
+6. Reports
+7. Troubleshooting
+
+## Prerequisites
+Ensure the following tools are installed on your system:
+- **Node.js** (version 16 or later) [Download from Node.js Official Website](https://nodejs.org/)
+- **npm** (comes with Node.js)
+- **Git** [Download from Git Official Website](https://git-scm.com/)
+
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Obaidul-007/LEGO-Education-code-challenge.git
+   cd LEGO-Education-code-challenge
+   ```
+
+2. Install project dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Install Playwright browsers:
+   ```bash
+   npx playwright install
+   ```
+
+## Running Tests Locally
+1. Run all tests:
+   ```bash
+   npx playwright test
+   ```
+
+2. Run tests in **headed mode** (to see the browser interactions):
+   ```bash
+   npx playwright test --headed
+   ```
+
+3. Debug tests using the Playwright Inspector:
+   ```bash
+   npx playwright test --debug
+   ```
+
+## Running Specific Test Suites
+The test cases are grouped into suites (e.g., `login`, `cart`, `checkout`):
+
+1. Run the Login Suite:
+   ```bash
+   npx playwright test tests/login
+   ```
+
+2. Run the Cart Suite:
+   ```bash
+   npx playwright test tests/cart
+   ```
+
+3. Run the Checkout Suite:
+   ```bash
+   npx playwright test tests/checkout
+   ```
+
+## CI/CD Integration
+The framework is integrated with GitHub Actions to run tests automatically:
+- **Push to the main branch**: Tests will execute automatically on every code push
+- **Pull requests to main**: Tests validate changes in pull requests
+
+### Manually Triggering CI/CD Pipeline
+1. Go to the **Actions** tab in your repository
+2. Select the **Playwright Tests** workflow
+3. Click **Run Workflow** to trigger the pipeline
+
+## Reports
+### HTML Reports
+- Generated in the `playwright-report/` directory
+- Open the `index.html` file to view detailed results
+
+```bash
+npx playwright show-report
+```
+
+### CI Reports
+- Test results and artifacts (screenshots and videos) are uploaded as part of the GitHub Actions workflow
+- Access these under the **Artifacts** section of the workflow run in the **Actions** tab
+
+## Troubleshooting
+### Timeout Errors
+Ensure stable network connectivity and increase test timeout if needed:
+
+```typescript
+test.setTimeout(120000); // Example for 2-minute timeout
+```
+
+### Browser Issues
+Reinstall Playwright browsers:
+```bash
+npx playwright install
+```
+
+## Contributing
+If you encounter issues, feel free to contribute or raise a GitHub issue in the repository.
