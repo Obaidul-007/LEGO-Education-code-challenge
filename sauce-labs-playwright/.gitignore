@@ -31,3 +31,6 @@ typings/
 
 # Optional eslint cache
 .eslintcache
+
+# Local Test result
+test-results/

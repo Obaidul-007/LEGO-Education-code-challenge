@@ -22,10 +22,13 @@ jobs:
           node-version: '16'
 
       - name: Install Dependencies
+        working-directory: ./sauce-labs-playwright  # Adjust to the correct directory
         run: npm install
 
       - name: Install Browsers
+        working-directory: ./sauce-labs-playwright  # Adjust to the correct directory
         run: npx playwright install
 
       - name: Run Playwright Tests
+        working-directory: ./sauce-labs-playwright  # Adjust to the correct directory
         run: npx playwright test
