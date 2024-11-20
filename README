@@ -18,10 +18,10 @@ Ensure the following tools are installed on your system:
 - **Git** [Download from Git Official Website](https://git-scm.com/)
 
 ## Installation
-1. Clone the repository:
+1. Clone the repository and navigate to the project directory:
    ```bash
    git clone https://github.com/Obaidul-007/LEGO-Education-code-challenge.git
-   cd LEGO-Education-code-challenge
+   cd LEGO-Education-code-challenge/sauce-labs-playwright
    ```
 
 2. Install project dependencies:
@@ -35,6 +35,8 @@ Ensure the following tools are installed on your system:
    ```
 
 ## Running Tests Locally
+All commands below should be run from the `sauce-labs-playwright` directory:
+
 1. Run all tests:
    ```bash
    npx playwright test
@@ -51,7 +53,7 @@ Ensure the following tools are installed on your system:
    ```
 
 ## Running Specific Test Suites
-The test cases are grouped into suites (e.g., `login`, `cart`, `checkout`):
+The test cases are grouped into suites (e.g., `login`, `cart`, `checkout`). Run these commands from the `sauce-labs-playwright` directory:
 
 1. Run the Login Suite:
    ```bash
@@ -80,7 +82,7 @@ The framework is integrated with GitHub Actions to run tests automatically:
 
 ## Reports
 ### HTML Reports
-- Generated in the `playwright-report/` directory
+- Generated in the `sauce-labs-playwright/playwright-report/` directory
 - Open the `index.html` file to view detailed results
 
 ```bash
